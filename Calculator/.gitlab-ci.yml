@@ -1,0 +1,16 @@
+image: golang:1.22
+
+stages:
+  - test
+  - build
+
+build:
+  stage: build
+  script:
+    - "go build -o calculator"
+    - "./calculator"
+
+test:
+  stage: test
+  script:
+    - "go test"
